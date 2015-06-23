@@ -8,7 +8,7 @@ require 'vcr'
 class ActiveSupport::TestCase
   # VCR configuration
   VCR.configure do |config|
-    config.cassette_library_dir = "test/fixtures/cassettes"
+    config.cassette_library_dir = "test/cassettes"
     config.hook_into :webmock # or :fakeweb
   end
 
