@@ -1,4 +1,4 @@
-class Legislator
+class Legislator < OpenStruct
 
   def self.service
     @service ||= SunlightService.new
@@ -6,6 +6,8 @@ class Legislator
 
   # the method below is the same as Legislator.find_by()
   def self.find_by(zipcode: "")
-    service.legislators(zipcode)
+    service.legislators(zipcode).map do |legislator|
+      Legislator.new(legislator)
+    end
   end
 end

@@ -7,7 +7,7 @@ class SunlightServiceTest < ActiveSupport::TestCase
   end
 
   test 'it gets all legislators by location' do
-    VCR.use_cassette('sunlight_service#legislators') do
+    VCR.use_cassette('sunlight_service#legislator') do
       service = SunlightService.new
       results = service.legislators('80202')
 
